@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+<h1> Speech Recognition </h1>
+
+{% if fruit %}
+    <h3>please tell me it's English name</h3>
+    <img src="static/{{ fruit }}.jpg"><br/>
+{% endif %}
+
+<form action="" method=post enctype=multipart/form-data>
+    <input type=file name=file>
+        <input type=submit value=Upload>
+    </form>
+
+{% if score %}
+    scores:  <pre>{% for s in scores %}     {{ s[0] }} : {{ s[1] }}<br>{% endfor %}</pre>
+    your result is <b>{{ result }}</b><br>
+    <h2>{{ s }}</h2>
+{% endif %}
+<!--dataset and source code are here `/static/biubiubiu.zip`-->
+</body>
+</html>
